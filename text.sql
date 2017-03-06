@@ -1,0 +1,14 @@
+CREATE DATABASE informaboutique;
+
+CREATE TABLE client (id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT, civililte CHAR(1), nom VARCHAR(64), prenom VARCHAR(64), naissance DATE, adresse VARCHAR() ville VARCHAR(30), mail VARCHAR(30), tel VARCHAR(20), login VARCHAR(20), password VARCHAR(20));
+
+CREATE TABLE produit (id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, type VARCHAR(30), marque VARCHAR(30), model VARCHAR(30), 
+                      prix REAL(6,2), commentaires TEXT, disponibilite BOOLEAN, stock INT;
+    
+CREATE TABLE livraison (id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, societe VARCHAR(15), delai VARCHAR(10), lieu VARCHAR(30));
+
+CREATE TABLE commande (id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, client, articles , montant , jour, CONSTRAINT nom_marque FOREIGN KEY (marque) REFERENCE marque);
+
+CREATE TABLE marque (id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT, marque VARCHAR(15)); 
+
+CREATE TABLE suivi
